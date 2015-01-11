@@ -8,6 +8,6 @@ Install
 ```
 sudo yum install python-virtualenvwrapper -y
 source /usr/bin/virtualenvwrapper.sh
-pip install -r requirements.txt
+mkvirtualenv phriscage.github.io_hexo -r requirements.txt
 nodeenv -p
 npm install hexo -g
