@@ -50,7 +50,7 @@ $ curl -X GET http://127.0.0.1:9200
 
 * **Python**: Python 2.6.6 is already included in the base Centos 6.4, so that version will work. We’ll be using [Python virtual environments](http://virtualenv.readthedocs.org/en/latest/) and [Pip](https://pip.pypa.io/en/latest/) to handle the Python libraries and dependencies:
 
-` yum install python-virtualenv python-pip -y `
+` yum install python-virtualenv python-virtualenvwrapper python-pip -y `
 
 * **Git**: We’ll need to install [Git](http://git-scm.com/) and clone the tutorial source code from my [Gihub](https://github.com/) [repository](https://github.com/phriscage/flask_elasticsearch_auth_example && cd flask_elasticsearch_auth_example).
 
@@ -59,8 +59,7 @@ $ curl -X GET http://127.0.0.1:9200
 
 * **Python libraries**: Create a new virtual environment and activate it. Then pull the packages from [PyPi](https://pypi.python.org/pypi) using Pip and [requirements.txt](https://github.com/phriscage/flask_elasticsearch_auth_example/blob/master/requirements.txt):
 
-` virtualenv venv && source venv/bin/activate `
-` ./venv/bin/pip install -r requirements.txt `
+` mkvirtualenv flask_elasticsearch_auth_example -r requirements.txt `
 
 Now we should have all the required dependencies. :)
 
