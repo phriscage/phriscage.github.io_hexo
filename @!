@@ -17,4 +17,3 @@ source /usr/bin/virtualenvwrapper.sh
 mkvirtualenv phriscage.github.io -r requirements.txt
 nodeenv -p
 npm install -g
-```
