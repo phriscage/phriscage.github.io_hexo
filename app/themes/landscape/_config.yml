@@ -2,7 +2,6 @@
 menu:
   Home: /
   Archives: /archives
-  About: /about
 rss: /atom.xml
 
 # Content
@@ -19,9 +18,9 @@ widgets:
 - recent_posts
 
 # Miscellaneous
-google_analytics: UA-49982259-1
-favicon: /favicon.ico
-twitter: phriscage
+google_analytics:
+favicon: /favicon.png
+twitter:
 google_plus:
 fb_admins:
 fb_app_id:

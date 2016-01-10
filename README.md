@@ -7,7 +7,7 @@ Quickstart:
 =====================
 * Docker:
 ```
-docker build -t phriscage.github.io . && docker run -it --rm -p 4000:4000 phriscage.github.io
+docker build -t phriscage.github.io . && docker run -it --rm -p 4000:4000 -v ~/github.com/phriscage/phriscage.github.io_hexo/app:/app phriscage.github.io_hexo
 ```
 
 * Python:

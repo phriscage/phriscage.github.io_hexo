@@ -5,16 +5,24 @@
 ##  Email:  christophertpage@gmail.com
 ##  Purpose:   This Dockerfile contains the Docker builder commands for a simple
 ##	the hexo blog development environment.
+##  Usage: docker run -it \
+##	--rm \
+##	-p 4000:4000 \
+##	-v ~/github.com/phriscage/phriscage.github.io_hexo/app:/app \
+##	phriscage.github.io_hexo
 ################################################################################
 FROM node:5.3.0-slim
 
 MAINTAINER Chris Page <christophertpage@gmail.com>
 
+ENV HEXO_SERVER_PORT=4000
+
+RUN npm install -g hexo-cli
 WORKDIR /app
-COPY app /app
-RUN npm install
+#RUN npm install
 
-EXPOSE 4000
+EXPOSE ${HEXO_SERVER_PORT}
 
-CMD ["/app/node_modules/hexo/bin/hexo", "server", "-d"]
-#ENTRYPOINT ["/nodejs/bin/npm", "start"]
+#COPY docker-entrypoint.sh /app/.
+#ENTRYPOINT ["/app/docker-entrypoint.sh"]
+CMD npm install && hexo server -d
