@@ -7,7 +7,7 @@ Quickstart:
 =====================
 * Docker:
 ```
-docker build -t phriscage.github.io . && docker run -it --rm -p 4000:4000 -v ~/github.com/phriscage/phriscage.github.io_hexo/app:/app phriscage.github.io_hexo
+docker build -t phriscage/hexo-server . && HEXO_SERVER_CONTAINER_PORT=4000; HEXO_SERVER_HOST_PORT=4000; docker run -it --rm -p $HEXO_SERVER_HOST_PORT:$HEXO_SERVER_CONTAINER_PORT -e HEXO_SERVER_PORT=$HEXO_SERVER_CONTAINER_PORT -v ~/github.com/phriscage/phriscage.github.io_hexo/app:/app phriscage/hexo-server
 ```
 
 * Python:
