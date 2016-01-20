@@ -36,4 +36,5 @@ EXPOSE ${HEXO_SERVER_PORT}
 
 ## npm install the latest packages from package.json and run the hexo server
 ## TODO put this in an appropriate ENTRYPOINT script
-CMD npm install && hexo server -d -p ${HEXO_SERVER_PORT}
+#CMD npm install && hexo clean && hexo server -d -p ${HEXO_SERVER_PORT}
+CMD npm install; hexo clean; hexo server -d -p ${HEXO_SERVER_PORT}

@@ -83,9 +83,12 @@ disqus_shortname: phriscagegithubio
 theme: landscape
 exclude_generator:
 
+sitemap:
+    path: sitemap.xml
+
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type: github 
+  type: git
   repo: git@github.com:phriscage/phriscage.github.io.git
   branch: master
