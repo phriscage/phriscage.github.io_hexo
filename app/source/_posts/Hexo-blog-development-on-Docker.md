@@ -25,6 +25,11 @@ MAINTAINER Chris Page <christophertpage@gmail.com>
 ## set HEXO_SERVER_PORT environment default
 ENV HEXO_SERVER_PORT=4000
 
+## update the respositories
+RUN apt-get update
+## install git for deployment
+RUN apt-get install git -y
+
 ## install hexo-cli globally
 RUN npm install -g hexo-cli
 
@@ -34,8 +39,12 @@ WORKDIR /app
 ## expose the HEXO_SERVER_PORT
 EXPOSE ${HEXO_SERVER_PORT}
 
+#COPY docker-entrypoint.sh /app/.
+#ENTRYPOINT ["/app/docker-entrypoint.sh"]
+
 ## npm install the latest packages from package.json and run the hexo server
 ## TODO put this in an appropriate ENTRYPOINT script
+#CMD npm install && hexo clean && hexo server -d -p ${HEXO_SERVER_PORT}
 CMD npm install; hexo clean; hexo server -d -p ${HEXO_SERVER_PORT}
 
 ```
@@ -53,7 +62,7 @@ You can also specify the **-e** HEXO_SERVER_PORT environment variable to change 
 
 
 ```
-$ HEXO_SERVER_CONTAINER_PORT=4000; HEXO_SERVER_HOST_PORT=4000; docker run -it --rm -p $HEXO_SERVER_HOST_PORT:$HEXO_SERVER_CONTAINER_PORT -e HEXO_SERVER_PORT=$HEXO_SERVER_CONTAINER_PORT -v ~/github.com/phriscage/phriscage.github.io_hexo/app:/app phriscage/hexo-server
+$ BLOG_DIR=~/github.com/phriscage/phriscage.github.io_hexo HEXO_SERVER_CONTAINER_PORT=4000; HEXO_SERVER_HOST_PORT=4000; docker run -it --rm -p $HEXO_SERVER_HOST_PORT:$HEXO_SERVER_CONTAINER_PORT -e HEXO_SERVER_PORT=$HEXO_SERVER_CONTAINER_PORT -v $BLOG_DIR/app:/app --name hexo_blog phriscage/hexo-server
 npm info it worked if it ends with ok
 npm info using npm@3.3.12
 npm info using node@v5.3.0

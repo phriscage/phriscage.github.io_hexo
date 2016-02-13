@@ -90,5 +90,5 @@ sitemap:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo:  https://phriscage@github.com/phriscage/phriscage.github.io.git
+  repo:  https://github.com/phriscage/phriscage.github.io.git
   branch: master
