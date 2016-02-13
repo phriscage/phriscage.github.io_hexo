@@ -12,6 +12,7 @@
 ##	-p $HEXO_SERVER_HOST_PORT:$HEXO_SERVER_CONTAINER_PORT \
 ##	-e HEXO_SERVER_PORT=$HEXO_SERVER_CONTAINER_PORT
 ##	-v <local github.com hexo directory>:/app \
+##	--name hexo_blog \
 ##	phriscage/hexo-server
 ##
 ################################################################################
@@ -21,6 +22,11 @@ MAINTAINER Chris Page <christophertpage@gmail.com>
 
 ## set HEXO_SERVER_PORT environment default
 ENV HEXO_SERVER_PORT=4000
+
+## update the respositories
+RUN apt-get update
+## install git for deployment
+RUN apt-get install git -y
 
 ## install hexo-cli globally
 RUN npm install -g hexo-cli
