@@ -1,7 +1,7 @@
 ################################################################################
 ##
 ##  Developer:  Chris Page
-##  Email:  christophertpage@gmail.com
+##  Email:  phriscage@gmail.com
 ##  Purpose:   This Dockerfile contains the Docker builder commands for a simple
 ##	the hexo blog development environment.
 ##  Usage:
@@ -18,7 +18,7 @@
 ################################################################################
 FROM node:5.3.0-slim
 
-MAINTAINER Chris Page <christophertpage@gmail.com>
+MAINTAINER Chris Page <phriscage@gmail.com>
 
 ## set HEXO_SERVER_PORT environment default
 ENV HEXO_SERVER_PORT=4000

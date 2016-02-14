@@ -20,7 +20,7 @@ A Dockerfile is a script that defines all of the various commands for creating a
 ``` 
 FROM node:5.3.0-slim
 
-MAINTAINER Chris Page <christophertpage@gmail.com>
+MAINTAINER Chris Page <phriscage@gmail.com>
 
 ## set HEXO_SERVER_PORT environment default
 ENV HEXO_SERVER_PORT=4000
